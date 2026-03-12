@@ -12,7 +12,7 @@ body {
 }
 
 /* ══════════════════════════════
-   NAVBAR — Bootstrap (only navbar)
+   NAVBAR
 ══════════════════════════════ */
 
 .navbar-bs {
@@ -745,8 +745,6 @@ html {
     opacity: 0.6;
 }
 
-
-
 /* Container for the cards */
 .experience-container {
     position: relative;
@@ -983,6 +981,12 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 0;
+}
+
+.footer-col ul li {
+    display: block;
+    width: 100%;
 }
 
 .footer-col ul li a {
@@ -992,7 +996,7 @@ footer::before {
     font-weight: 400;
     letter-spacing: 0.5px;
     transition: color 0.25s ease, padding-left 0.25s ease;
-    display: inline-block;
+    display: block;
 }
 
 .footer-col ul li a:hover {
@@ -1110,8 +1114,23 @@ footer::before {
         gap: 24px;
     }
 
+    /* ── FOOTER FIX: single column on mobile ── */
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-col ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-col ul li a {
+        display: block;
     }
 
     .experience-section {
@@ -1128,10 +1147,6 @@ footer::before {
 }
 
 @media (max-width: 480px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
     .footer-bottom {
         flex-direction: column;
         gap: 16px;

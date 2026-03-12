@@ -103,7 +103,6 @@ body {
     object-position: center 40%;
 }
 
-
 .hero-text {
     position: relative;
     z-index: 2;
@@ -384,7 +383,7 @@ body {
 }
 
 /* ============================================================
-   FOOTER — UNCHANGED
+   FOOTER
    ============================================================ */
 footer {
     background: #111;
@@ -477,6 +476,12 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 0; /* override Bootstrap default padding-left: 2rem */
+}
+
+.footer-col ul li {
+    display: block;
+    width: 100%;
 }
 
 .footer-col ul li a {
@@ -486,7 +491,7 @@ footer::before {
     font-weight: 400;
     letter-spacing: 0.5px;
     transition: color 0.25s ease, padding-left 0.25s ease;
-    display: inline-block;
+    display: block;
 }
 
 .footer-col ul li a:hover {
@@ -547,4 +552,108 @@ footer::before {
 
 .footer-bottom-links a:hover {
     color: rgb(197, 20, 37);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Navbar mobile */
+@media (max-width: 992px) {
+    .navbar-bs {
+        padding: 16px 20px !important;
+    }
+
+    .navbar-bs .bs-nav {
+        gap: 0;
+        padding-right: 0;
+    }
+
+    .navbar-bs .bs-link {
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-bs .bs-link:hover,
+    .navbar-bs .bs-link:focus {
+        padding: 12px 15px !important;
+    }
+}
+
+/* Tablet & mobile */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .hero {
+        height: 60vh;
+        min-height: 380px;
+        max-height: 560px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(3.5rem, 14vw, 6rem);
+    }
+
+    /* Footer grid — single column */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .footer-col ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-col ul li a {
+        display: block;
+    }
+
+    .footer-inner {
+        padding: 40px 20px 0;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+    /* Hero */
+    .hero {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(3rem, 16vw, 5rem);
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* Story section */
+    .story-section {
+        padding: 4rem 0 3rem;
+    }
+
+    /* Bikes section */
+    .bikes-section {
+        padding: 4rem 0 3rem;
+    }
 }

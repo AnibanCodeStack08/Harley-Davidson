@@ -203,39 +203,6 @@ body {
 }
 
 /* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 992px) {
-    .service-grid,
-    .service-grid2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-content h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .service-grid,
-    .service-grid2 {
-        grid-template-columns: 1fr;
-    }
-
-    .service-section {
-        height: 60vh;
-    }
-
-    .service-content h1 {
-        font-size: 2.3rem;
-    }
-
-    .service-content p {
-        font-size: 1rem;
-    }
-}
-
-/* ============================================================
    FOOTER
    ============================================================ */
 footer {
@@ -329,6 +296,12 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 0; /* override Bootstrap default padding-left: 2rem */
+}
+
+.footer-col ul li {
+    display: block;
+    width: 100%;
 }
 
 .footer-col ul li a {
@@ -338,7 +311,7 @@ footer::before {
     font-weight: 400;
     letter-spacing: 0.5px;
     transition: color 0.25s ease, padding-left 0.25s ease;
-    display: inline-block;
+    display: block;
 }
 
 .footer-col ul li a:hover {
@@ -399,4 +372,118 @@ footer::before {
 
 .footer-bottom-links a:hover {
     color: rgb(197, 20, 37);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Navbar mobile */
+@media (max-width: 992px) {
+    .navbar-bs {
+        padding: 16px 20px !important;
+    }
+
+    .navbar-bs .bs-nav {
+        gap: 0;
+        padding-right: 0;
+    }
+
+    .navbar-bs .bs-link {
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-bs .bs-link:hover,
+    .navbar-bs .bs-link:focus {
+        padding: 12px 15px !important;
+    }
+
+    /* Service grid 2 columns */
+    .service-grid,
+    .service-grid2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Tablet & mobile */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .service-section {
+        height: 60vh;
+        min-height: 380px;
+    }
+
+    .service-content h1 {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .service-content p {
+        font-size: 1rem;
+    }
+
+    /* Footer grid — single column */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .footer-col ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-col ul li a {
+        display: block;
+    }
+
+    .footer-inner {
+        padding: 40px 20px 0;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 600px) {
+
+    /* Hero */
+    .service-section {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .service-content h1 {
+        font-size: clamp(2rem, 12vw, 2.5rem);
+    }
+
+    /* Service grid single column */
+    .service-grid,
+    .service-grid2 {
+        grid-template-columns: 1fr;
+        margin: 3rem auto;
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 }
