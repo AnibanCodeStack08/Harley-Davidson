@@ -19,41 +19,66 @@ body {
 /* ============================================================
    NAVBAR
    ============================================================ */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: whitesmoke;
+.navbar-bs {
+    background-color: whitesmoke !important;
+    padding: 20px 40px !important;
 }
 
-.navbar .logo {
+.navbar-bs .container-fluid {
+    padding: 0;
+}
+
+.navbar-bs .bs-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: rgb(197, 20, 37);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 50px;
-    margin: 10px;
-    padding-right: 30px;
+    color: rgb(197, 20, 37) !important;
+    text-decoration: none;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav-links a {
-    color: black;
-    text-decoration: none;
+.navbar-bs .bs-logo:hover {
+    color: rgb(197, 20, 37) !important;
+}
+
+.navbar-bs .bs-nav {
+    gap: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-right: 30px;
+    align-items: center;
+}
+
+.navbar-bs .bs-link {
+    color: black !important;
     font-weight: 500;
+    font-size: 1rem;
+    padding: 0 !important;
+    text-decoration: none;
     transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-    background-color: rgb(197, 20, 37);
-    color: white;
-    padding: 10px 15px;
+.navbar-bs .bs-link:hover,
+.navbar-bs .bs-link:focus {
+    background-color: rgb(197, 20, 37) !important;
+    color: white !important;
+    padding: 10px 15px !important;
 }
+
+.navbar-bs .bs-link.active,
+.navbar-bs .bs-link:active {
+    color: black !important;
+    background-color: transparent !important;
+}
+
+.navbar-bs .bs-toggler {
+    border-color: rgba(0, 0, 0, 0.3) !important;
+    padding: 4px 8px;
+}
+
+.navbar-bs .bs-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(197, 20, 37, 0.3) !important;
+}
+
 
 /* ============================================================
    SERVICE HERO SECTION
@@ -211,7 +236,7 @@ body {
 }
 
 /* ============================================================
-   FOOTER — SAME AS ABOUT PAGE
+   FOOTER
    ============================================================ */
 footer {
     background: #111;

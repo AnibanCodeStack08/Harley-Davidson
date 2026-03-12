@@ -28,13 +28,36 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-        <div class="logo">Harley-Davidson</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-        </ul>
+<!-- Bootstrap Navbar: logo left, links right -->
+    <nav class="navbar navbar-expand-lg navbar-bs">
+        <div class="container-fluid">
+
+            <!-- Logo — left side -->
+            <a class="navbar-brand bs-logo" href="./index.html">Harley-Davidson</a>
+
+            <!-- Hamburger toggler (mobile) -->
+            <button class="navbar-toggler bs-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links — pushed to right with ms-auto -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 bs-nav">
+                    <li class="nav-item">
+                        <a class="nav-link bs-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bs-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bs-link" href="./services.html">Services</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </nav>
 
     <!-- ================= HERO SECTION ================= -->
