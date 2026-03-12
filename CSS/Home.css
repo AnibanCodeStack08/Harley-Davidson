@@ -745,6 +745,62 @@ html {
     opacity: 0.6;
 }
 
+/* ── Experience Section Heading ── */
+.experience-header {
+    text-align: center;
+    margin-bottom: 52px;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.exp-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgb(197, 20, 37);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.exp-label::before,
+.exp-label::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgb(197, 20, 37);
+    opacity: 0.5;
+}
+
+.exp-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    letter-spacing: 4px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.exp-title span {
+    color: rgb(197, 20, 37);
+}
+
+.exp-subtitle {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: #555;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
 /* Container for the cards */
 .experience-container {
     position: relative;
@@ -787,6 +843,127 @@ html {
 
 .hd-small-card {
     height: 200px;
+}
+
+/* ── Card Overlay ── */
+.hd-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 22px;
+    transition: background 0.4s ease;
+}
+
+.hd-card:hover .hd-card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.45) 55%, transparent 100%);
+}
+
+/* Tag badge (top-left) */
+.hd-card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgb(197, 20, 37);
+    padding: 5px 12px;
+    line-height: 1;
+}
+
+/* Bottom content block */
+.hd-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transform: translateY(8px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hd-card:hover .hd-card-content {
+    transform: translateY(0);
+}
+
+.hd-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+}
+
+.hd-small-card .hd-card-title {
+    font-size: 20px;
+}
+
+.hd-card-desc {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 260px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+}
+
+.hd-small-card .hd-card-desc {
+    display: none;
+}
+
+.hd-card:hover .hd-card-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CTA link */
+.hd-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgb(197, 20, 37);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s, color 0.3s, border-color 0.3s;
+    width: fit-content;
+}
+
+.hd-card:hover .hd-card-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hd-card-btn:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.hd-card-btn i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hd-card-btn:hover i {
+    transform: translateX(4px);
 }
 
 /* ══════════════════════════════
@@ -1143,6 +1320,16 @@ footer::before {
 
     .hd-small-card {
         height: 180px;
+    }
+
+    .hd-card-desc {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hd-card-btn {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
